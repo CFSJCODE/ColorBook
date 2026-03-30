@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorBook — Eng. Interfaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body class="flex h-screen font-sans antialiased selection:bg-indigo-500/30">
+    <div class="noise-overlay"></div>
+    <div id="bg-glow"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[100] flex items-center gap-3 rounded-2xl glass-panel px-5 py-4 hidden opacity-0">
+        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+            <i class="fas fa-check text-sm"></i>
+        </div>
+        <div>
+            <p class="text-sm font-semibold text-white">Copiado para a área de transferência</p>
+            <p id="toast-val" class="text-xs font-mono text-slate-400 mt-0.5">#FFFFFF</p>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="flex w-80 flex-col border-r border-glass-border bg-black/40 backdrop-blur-2xl z-10">
+        <header class="p-6 border-b border-glass-border">
+            <h1 class="text-2xl font-bold tracking-tight bg-gradient-to-br from-white to-slate-500 bg-clip-text text-transparent">
+                Color<span class="font-light">Book</span>
+            </h1>
+            <p class="mt-1 text-xs font-mono text-slate-500">v2.0 // Fluent + Liquid Glass</p>
+            
+            <div class="mt-5 relative group">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-indigo-400"></i>
+                <input id="searchInput" type="text" placeholder="Buscar paleta... (/)" 
+                    class="w-full rounded-xl border border-glass-border bg-white/5 py-2.5 pl-9 pr-4 text-sm text-white placeholder-slate-500 outline-none transition-all focus:border-indigo-500/50 focus:bg-white/10 focus:ring-2 focus:ring-indigo-500/20">
+            </div>
+        </header>
+
+        <div class="flex items-center justify-between px-6 py-3 border-b border-glass-border/50 bg-white/[0.02]">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Índice</span>
+            <span id="paletteCount" class="text-xs font-mono text-slate-500">40 entradas</span>
+        </div>
+
+        <nav id="nav-list" class="flex-1 overflow-y-auto p-3 space-y-1">
+            <!-- Navigation buttons injected via JS -->
+        </nav>
+
+        <footer class="p-4 border-t border-glass-border text-center">
+            <p class="text-[10px] text-slate-500 font-mono flex items-center justify-center gap-2">
+                <kbd class="rounded bg-white/10 px-1.5 py-0.5">↑</kbd>
+                <kbd class="rounded bg-white/10 px-1.5 py-0.5">↓</kbd> ou 
+                <kbd class="rounded bg-white/10 px-1.5 py-0.5">j</kbd>
+                <kbd class="rounded bg-white/10 px-1.5 py-0.5">k</kbd> para navegar
+            </p>
+        </footer>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content" class="relative flex-1 overflow-y-auto p-8 md:p-12 lg:p-16 flex flex-col">
+        <!-- Content injected via JS -->
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
